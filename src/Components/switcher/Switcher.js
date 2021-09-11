@@ -1,22 +1,15 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom';
-import {orderPathRoutes, getNameRoute } from '../../utils/routes/logic.js'
+import {orderPathRoutes } from '../../utils/routes/logic.js'
 
 
-function Switcher({routes,path="",paramRoute}) {
+function Switcher({routes,path=""}) {
     return (
         <>
-            <Switch>
-                    
-            	{paramRoute && <Route 
-                    key={paramRoute.key}
-                    path={getNameRoute(routes,paramRoute.path)+"/:id"}
-                    component={paramRoute.component}
-                />}
-    
+            <Switch>    
             	{orderPathRoutes(routes).map(route=>
             		<Route 
-            		   	key={route.path} 
+            		   	key={route.name} 
             		   	path={path+route.path} 
             		   	exact={route.exactRoute} 
             		   	component={route.component}

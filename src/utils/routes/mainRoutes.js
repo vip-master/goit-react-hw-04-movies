@@ -17,6 +17,7 @@ const routes=[
         isLink:true,
         component:lazy(()=>import('../../Components/home/Home.js')),
     },
+    
     {
         name:"movies",
         path:"/movies",
@@ -24,6 +25,14 @@ const routes=[
         exactRoute:true,
         isLink:true,
         component:lazy(()=>import('../../Components/moviesSearch/MoviesSearch.js')),
+    },
+    {
+        name:"movieId",
+        path:"/movies/:id",
+        exactLink:false,
+        exactRoute:false,
+        isLink:false,
+        component:lazy(()=>import('../../Components/movie/Movie.js')),
     },
 ]
 

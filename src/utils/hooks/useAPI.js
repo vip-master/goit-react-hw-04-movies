@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useAPI=(callback,params,clean=()=>{})=>{
+export const useAPI=(callback,params)=>{
 	const [data, setData]=useState(null)
 
 	useEffect(()=>{
@@ -10,9 +10,6 @@ export const useAPI=(callback,params,clean=()=>{})=>{
 			else setData(undefined)
 		}
 		af()
-		return ()=>{
-			clean()
-		}
 	},[params])
 
 	return data

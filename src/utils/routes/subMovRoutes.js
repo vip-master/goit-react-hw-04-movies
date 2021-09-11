@@ -16,7 +16,15 @@ const routes=[
         exactRoute:true,
         isLink:true,
         component:lazy(()=>import('../../Components/reviews/Reviews.js')),
-    }
+    },
+    {
+        name:"error",
+        path:"/:some",
+        exactLink:false,
+        exactRoute:false,
+        isLink:false,
+        component:lazy(()=>import('../../Components/error/Error.js')),
+    },
 ]
 
 export default routes

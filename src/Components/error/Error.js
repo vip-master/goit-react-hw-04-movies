@@ -1,15 +1,19 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function Error() {
 
-	let error=useLocation().state
+	const history=useHistory()
+
+	let error=history.location.state
 
 	if(!error || !error.error){
 		error={data:{}}
 		error.statusText="Page not found"
 		error.status=""
 		error.status_message=""
+
+		history.replace("/")
 	} else error = error.error
 	
 	return(

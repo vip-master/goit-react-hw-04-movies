@@ -1,4 +1,4 @@
-const specificPath=(route)=>route.path.split("/").filter(i=>i!=="").length
+const specificPath=({path})=>path.split("/").filter(i=>i!=="").length+(path.includes(":")?1:0)
 
 export const orderPathRoutes=(routes)=>{
 
